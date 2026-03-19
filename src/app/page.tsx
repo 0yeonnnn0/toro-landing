@@ -428,10 +428,10 @@ export default function Home() {
       </section>
 
       {/* ═══ FEATURES ═══ */}
-      <section id="features" className="relative py-36 px-6" ref={featuresRef}>
-        <div className="section-divider max-w-4xl mx-auto mb-36" />
+      <section id="features" className="relative py-20 sm:py-28 px-6" ref={featuresRef}>
+        <div className="section-divider max-w-4xl mx-auto mb-20 sm:mb-28" />
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-20">
+          <div className="text-center mb-14">
             <h2 className="reveal font-display font-extrabold text-4xl sm:text-5xl tracking-tight mb-5">
               <span className="text-gradient-cyan">강력한 기능</span>들
             </h2>
@@ -467,10 +467,10 @@ export default function Home() {
       </section>
 
       {/* ═══ CHARACTERS ═══ */}
-      <section id="characters" className="relative py-36 px-6" ref={charactersRef}>
-        <div className="section-divider max-w-4xl mx-auto mb-36" />
+      <section id="characters" className="relative py-20 sm:py-28 px-6" ref={charactersRef}>
+        <div className="section-divider max-w-4xl mx-auto mb-20 sm:mb-28" />
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-20">
+          <div className="text-center mb-14">
             <h2 className="reveal font-display font-extrabold text-4xl sm:text-5xl tracking-tight mb-5">
               세 가지 <span className="text-accent-magenta">캐릭터</span>
             </h2>
@@ -528,8 +528,8 @@ export default function Home() {
       </section>
 
       {/* ═══ COMMANDS ═══ */}
-      <section className="relative py-36 px-6" ref={commandsRef}>
-        <div className="section-divider max-w-4xl mx-auto mb-36" />
+      <section className="relative py-20 sm:py-28 px-6" ref={commandsRef}>
+        <div className="section-divider max-w-4xl mx-auto mb-20 sm:mb-28" />
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="reveal font-display font-extrabold text-4xl sm:text-5xl tracking-tight mb-5">
@@ -560,8 +560,8 @@ export default function Home() {
       </section>
 
       {/* ═══ CTA ═══ */}
-      <section id="invite" className="relative py-36 px-6" ref={ctaRef}>
-        <div className="section-divider max-w-4xl mx-auto mb-36" />
+      <section id="invite" className="relative py-20 sm:py-28 px-6" ref={ctaRef}>
+        <div className="section-divider max-w-4xl mx-auto mb-20 sm:mb-28" />
         <div className="max-w-3xl mx-auto text-center">
           {/* Logo */}
           <div className="reveal relative inline-block mb-10">
