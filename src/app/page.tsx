@@ -223,9 +223,9 @@ export default function Home() {
             <a href="#features" className="text-sm text-text-muted hover:text-text transition-colors hidden sm:block">기능</a>
             <a href="#commands" className="text-sm text-text-muted hover:text-text transition-colors hidden sm:block">명령어</a>
             <a href="https://bot.yeonnnn.xyz/chat" target="_blank" rel="noopener noreferrer" className="text-sm text-text-muted hover:text-text transition-colors hidden sm:block">체험하기</a>
-            <a href="#cta" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-discord text-white text-sm font-semibold hover:brightness-110 transition-[filter]" aria-label="디스코드에 TORO 초대">
-              <DiscordIcon className="w-4 h-4" />
-              <span className="hidden sm:inline">초대하기</span>
+            <a href="#cta" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-accent text-white text-sm font-semibold hover:brightness-110 transition-[filter]">
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0l-9.75 6.093L2.25 6.75" /></svg>
+              <span className="hidden sm:inline">문의하기</span>
             </a>
           </div>
         </div>
@@ -252,9 +252,9 @@ export default function Home() {
           </p>
 
           <div className="flex flex-wrap justify-center gap-4" style={{ animation: "fade-up 0.8s cubic-bezier(0.16,1,0.3,1) 0.5s both" }}>
-            <a href="#cta" className="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-accent text-white font-display font-semibold text-sm transition-[transform,box-shadow] hover:shadow-[0_0_30px_rgba(129,140,248,0.25)] hover:scale-[1.03]">
-              <DiscordIcon className="w-4 h-4" />
-              서버에 추가하기
+            <a href="mailto:yeonnnn.dev@gmail.com?subject=TORO%20사용%20문의" className="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-accent text-white font-display font-semibold text-sm transition-[transform,box-shadow] hover:shadow-[0_0_30px_rgba(129,140,248,0.25)] hover:scale-[1.03]">
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0l-9.75 6.093L2.25 6.75" /></svg>
+              사용 문의하기
               <svg className="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
             </a>
             <a href="https://bot.yeonnnn.xyz/chat" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl border border-border text-text-dim font-display font-medium text-sm transition-[border-color,color] hover:border-white/[0.15] hover:text-text">
@@ -334,14 +334,14 @@ export default function Home() {
             <span className="text-accent-bright">TORO를 만나보세요</span>
           </h2>
           <p className="text-text-dim text-lg mb-12 max-w-md mx-auto">
-            @TORO 멘션 한 번이면 끝.
+            사용 문의, 커스텀 캐릭터 요청, 협업 제안 등
             <br />
-            설정 없이 바로 대화를 시작하세요.
+            무엇이든 편하게 연락주세요.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="#" className="group inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-discord text-white font-display font-bold text-base transition-[transform,box-shadow] hover:shadow-[0_0_40px_rgba(88,101,242,0.35)] hover:scale-[1.03]" aria-label="디스코드에 TORO 추가">
-              <DiscordIcon className="w-5 h-5" />
-              디스코드에 추가하기
+            <a href="mailto:yeonnnn.dev@gmail.com?subject=TORO%20사용%20문의" className="group inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-accent text-white font-display font-bold text-base transition-[transform,box-shadow] hover:shadow-[0_0_40px_rgba(129,140,248,0.3)] hover:scale-[1.03]">
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0l-9.75 6.093L2.25 6.75" /></svg>
+              이메일 보내기
               <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
             </a>
             <a href="https://bot.yeonnnn.xyz/chat" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border border-border text-text-dim font-display font-medium text-base transition-[border-color,color] hover:border-white/[0.15] hover:text-text">
