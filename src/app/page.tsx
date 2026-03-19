@@ -315,7 +315,7 @@ export default function Home() {
   const ctaRef = useScrollReveal();
 
   return (
-    <div className="relative grid-bg">
+    <div className="relative grid-bg overflow-x-hidden">
       {/* ─── Ambient orbs ─── */}
       <div
         className="fixed top-[-250px] left-[-250px] w-[700px] h-[700px] rounded-full animate-float animate-pulse-glow pointer-events-none"
@@ -428,10 +428,10 @@ export default function Home() {
       </section>
 
       {/* ═══ FEATURES ═══ */}
-      <section id="features" className="relative py-24 sm:py-32 px-6" ref={featuresRef}>
-        <div className="section-divider max-w-4xl mx-auto mb-24 sm:mb-32" />
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16 sm:mb-20">
+      <section id="features" className="relative pt-32 pb-40 px-8 sm:px-12" ref={featuresRef}>
+        <div className="section-divider max-w-3xl mx-auto mb-28" />
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-20">
             <h2 className="reveal font-display font-extrabold text-4xl sm:text-5xl tracking-tight mb-5">
               <span className="text-gradient-cyan">강력한 기능</span>들
             </h2>
@@ -440,11 +440,11 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
             {features.map((f, i) => (
               <div
                 key={i}
-                className="reveal feature-card rounded-2xl bg-bg-card/60 backdrop-blur-sm p-8"
+                className="reveal feature-card rounded-2xl bg-bg-card/60 backdrop-blur-sm p-8 sm:p-9"
                 style={{
                   animationDelay: `${0.08 * i}s`,
                   "--card-accent": `${f.accent}40`,
@@ -454,7 +454,7 @@ export default function Home() {
                 <div className="feature-icon text-3xl mb-6 w-14 h-14 flex items-center justify-center rounded-xl" style={{ background: `${f.accent}0a` }}>
                   {f.icon}
                 </div>
-                <h3 className="font-display font-bold text-lg mb-2.5 text-text-primary">
+                <h3 className="font-display font-bold text-lg mb-3 text-text-primary">
                   {f.title}
                 </h3>
                 <p className="text-text-secondary text-sm leading-relaxed">
@@ -467,10 +467,10 @@ export default function Home() {
       </section>
 
       {/* ═══ CHARACTERS ═══ */}
-      <section id="characters" className="relative py-24 sm:py-32 px-6" ref={charactersRef}>
-        <div className="section-divider max-w-4xl mx-auto mb-24 sm:mb-32" />
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16 sm:mb-20">
+      <section id="characters" className="relative pt-32 pb-40 px-8 sm:px-12" ref={charactersRef}>
+        <div className="section-divider max-w-3xl mx-auto mb-28" />
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-20">
             <h2 className="reveal font-display font-extrabold text-4xl sm:text-5xl tracking-tight mb-5">
               세 가지 <span className="text-accent-magenta">캐릭터</span>
             </h2>
@@ -479,7 +479,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-7 sm:gap-8">
             {characters.map((c, i) => (
               <div
                 key={c.id}
@@ -494,28 +494,28 @@ export default function Home() {
                   className="character-card-inner"
                   style={{ "--char-orb": c.orb } as React.CSSProperties}
                 >
-                  <div className="flex items-center gap-3.5 mb-7">
+                  <div className="flex items-center gap-4 mb-8">
                     <span className="text-4xl">{c.emoji}</span>
                     <div>
                       <h3 className="font-display font-bold text-lg leading-tight">
                         {c.name}
                       </h3>
-                      <p className="text-xs text-text-muted mt-0.5">{c.sub}</p>
+                      <p className="text-xs text-text-muted mt-1">{c.sub}</p>
                     </div>
                   </div>
 
-                  <div className="flex flex-wrap gap-2 mb-7">
+                  <div className="flex flex-wrap gap-2 mb-8">
                     {c.traits.map((t, j) => (
                       <span
                         key={j}
-                        className="px-3 py-1 rounded-full text-xs bg-white/[0.03] border border-white/[0.06] text-text-secondary"
+                        className="px-3 py-1.5 rounded-full text-xs bg-white/[0.03] border border-white/[0.06] text-text-secondary"
                       >
                         {t}
                       </span>
                     ))}
                   </div>
 
-                  <div className="rounded-xl bg-bg-primary/50 p-4 border border-white/[0.03]">
+                  <div className="rounded-xl bg-bg-primary/50 p-5 border border-white/[0.03]">
                     <p className="text-sm text-text-primary/70 leading-relaxed whitespace-pre-line italic">
                       &ldquo;{c.sample}&rdquo;
                     </p>
@@ -528,20 +528,20 @@ export default function Home() {
       </section>
 
       {/* ═══ COMMANDS ═══ */}
-      <section className="relative py-24 sm:py-32 px-6" ref={commandsRef}>
-        <div className="section-divider max-w-4xl mx-auto mb-24 sm:mb-32" />
+      <section className="relative pt-32 pb-40 px-8 sm:px-12" ref={commandsRef}>
+        <div className="section-divider max-w-3xl mx-auto mb-28" />
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-14 sm:mb-16">
+          <div className="text-center mb-16">
             <h2 className="reveal font-display font-extrabold text-4xl sm:text-5xl tracking-tight mb-5">
               간단한 <span className="text-accent-yellow">명령어</span>
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
+          <div className="grid sm:grid-cols-2 gap-5">
             {commands.map((item, i) => (
               <div
                 key={i}
-                className="reveal command-row flex items-center gap-4 p-5 sm:p-6 rounded-xl bg-bg-card/30 border border-border-subtle cursor-default"
+                className="reveal command-row flex items-center gap-4 p-6 rounded-xl bg-bg-card/30 border border-border-subtle cursor-default"
                 style={{ animationDelay: `${0.06 * i}s` }}
               >
                 <code className="text-accent-cyan font-mono text-sm font-semibold whitespace-nowrap">
@@ -560,8 +560,8 @@ export default function Home() {
       </section>
 
       {/* ═══ CTA ═══ */}
-      <section id="invite" className="relative py-24 sm:py-32 px-6" ref={ctaRef}>
-        <div className="section-divider max-w-4xl mx-auto mb-24 sm:mb-32" />
+      <section id="invite" className="relative pt-32 pb-40 px-8 sm:px-12" ref={ctaRef}>
+        <div className="section-divider max-w-3xl mx-auto mb-28" />
         <div className="max-w-3xl mx-auto text-center">
           {/* Logo */}
           <div className="reveal relative inline-block mb-10">
