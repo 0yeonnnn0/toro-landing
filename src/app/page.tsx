@@ -222,6 +222,7 @@ export default function Home() {
           <div className="flex items-center gap-6">
             <a href="#features" className="text-sm text-text-muted hover:text-text transition-colors hidden sm:block">기능</a>
             <a href="#commands" className="text-sm text-text-muted hover:text-text transition-colors hidden sm:block">명령어</a>
+            <a href="https://bot.yeonnnn.xyz/chat" target="_blank" rel="noopener noreferrer" className="text-sm text-text-muted hover:text-text transition-colors hidden sm:block">체험하기</a>
             <a href="#cta" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-discord text-white text-sm font-semibold hover:brightness-110 transition-[filter]" aria-label="디스코드에 TORO 초대">
               <DiscordIcon className="w-4 h-4" />
               <span className="hidden sm:inline">초대하기</span>
@@ -256,8 +257,9 @@ export default function Home() {
               서버에 추가하기
               <svg className="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
             </a>
-            <a href="#features" className="inline-flex items-center px-7 py-3.5 rounded-xl border border-border text-text-dim font-display font-medium text-sm transition-[border-color,color] hover:border-white/[0.15] hover:text-text">
-              더 알아보기
+            <a href="https://bot.yeonnnn.xyz/chat" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl border border-border text-text-dim font-display font-medium text-sm transition-[border-color,color] hover:border-white/[0.15] hover:text-text">
+              웹에서 체험하기
+              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" /></svg>
             </a>
           </div>
         </div>
@@ -336,11 +338,17 @@ export default function Home() {
             <br />
             설정 없이 바로 대화를 시작하세요.
           </p>
-          <a href="#" className="group inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-discord text-white font-display font-bold text-base transition-[transform,box-shadow] hover:shadow-[0_0_40px_rgba(88,101,242,0.35)] hover:scale-[1.03]" aria-label="디스코드에 TORO 추가">
-            <DiscordIcon className="w-5 h-5" />
-            디스코드에 추가하기
-            <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
-          </a>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a href="#" className="group inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-discord text-white font-display font-bold text-base transition-[transform,box-shadow] hover:shadow-[0_0_40px_rgba(88,101,242,0.35)] hover:scale-[1.03]" aria-label="디스코드에 TORO 추가">
+              <DiscordIcon className="w-5 h-5" />
+              디스코드에 추가하기
+              <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+            </a>
+            <a href="https://bot.yeonnnn.xyz/chat" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border border-border text-text-dim font-display font-medium text-base transition-[border-color,color] hover:border-white/[0.15] hover:text-text">
+              웹에서 체험하기
+              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" /></svg>
+            </a>
+          </div>
         </div>
       </section>
 
