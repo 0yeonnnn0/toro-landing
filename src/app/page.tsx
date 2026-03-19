@@ -428,10 +428,10 @@ export default function Home() {
       </section>
 
       {/* ═══ FEATURES ═══ */}
-      <section id="features" className="relative py-20 sm:py-28 px-6" ref={featuresRef}>
-        <div className="section-divider max-w-4xl mx-auto mb-20 sm:mb-28" />
+      <section id="features" className="relative py-24 sm:py-32 px-6" ref={featuresRef}>
+        <div className="section-divider max-w-4xl mx-auto mb-24 sm:mb-32" />
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-14">
+          <div className="text-center mb-16 sm:mb-20">
             <h2 className="reveal font-display font-extrabold text-4xl sm:text-5xl tracking-tight mb-5">
               <span className="text-gradient-cyan">강력한 기능</span>들
             </h2>
@@ -440,7 +440,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((f, i) => (
               <div
                 key={i}
@@ -467,10 +467,10 @@ export default function Home() {
       </section>
 
       {/* ═══ CHARACTERS ═══ */}
-      <section id="characters" className="relative py-20 sm:py-28 px-6" ref={charactersRef}>
-        <div className="section-divider max-w-4xl mx-auto mb-20 sm:mb-28" />
+      <section id="characters" className="relative py-24 sm:py-32 px-6" ref={charactersRef}>
+        <div className="section-divider max-w-4xl mx-auto mb-24 sm:mb-32" />
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-14">
+          <div className="text-center mb-16 sm:mb-20">
             <h2 className="reveal font-display font-extrabold text-4xl sm:text-5xl tracking-tight mb-5">
               세 가지 <span className="text-accent-magenta">캐릭터</span>
             </h2>
@@ -479,7 +479,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-7">
+          <div className="grid md:grid-cols-3 gap-8">
             {characters.map((c, i) => (
               <div
                 key={c.id}
@@ -528,20 +528,20 @@ export default function Home() {
       </section>
 
       {/* ═══ COMMANDS ═══ */}
-      <section className="relative py-20 sm:py-28 px-6" ref={commandsRef}>
-        <div className="section-divider max-w-4xl mx-auto mb-20 sm:mb-28" />
+      <section className="relative py-24 sm:py-32 px-6" ref={commandsRef}>
+        <div className="section-divider max-w-4xl mx-auto mb-24 sm:mb-32" />
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-14 sm:mb-16">
             <h2 className="reveal font-display font-extrabold text-4xl sm:text-5xl tracking-tight mb-5">
               간단한 <span className="text-accent-yellow">명령어</span>
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-4">
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
             {commands.map((item, i) => (
               <div
                 key={i}
-                className="reveal command-row flex items-center gap-4 p-5 rounded-xl bg-bg-card/30 border border-border-subtle cursor-default"
+                className="reveal command-row flex items-center gap-4 p-5 sm:p-6 rounded-xl bg-bg-card/30 border border-border-subtle cursor-default"
                 style={{ animationDelay: `${0.06 * i}s` }}
               >
                 <code className="text-accent-cyan font-mono text-sm font-semibold whitespace-nowrap">
@@ -560,8 +560,8 @@ export default function Home() {
       </section>
 
       {/* ═══ CTA ═══ */}
-      <section id="invite" className="relative py-20 sm:py-28 px-6" ref={ctaRef}>
-        <div className="section-divider max-w-4xl mx-auto mb-20 sm:mb-28" />
+      <section id="invite" className="relative py-24 sm:py-32 px-6" ref={ctaRef}>
+        <div className="section-divider max-w-4xl mx-auto mb-24 sm:mb-32" />
         <div className="max-w-3xl mx-auto text-center">
           {/* Logo */}
           <div className="reveal relative inline-block mb-10">
