@@ -195,6 +195,119 @@ function MultiAIVisual() {
   );
 }
 
+/* ── Contact Form ── */
+function ContactForm() {
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("sending");
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch("https://formsubmit.co/ajax/yeonnnn.dev@gmail.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(Object.fromEntries(data)),
+      });
+      if (res.ok) {
+        setStatus("sent");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  }
+
+  if (status === "sent") {
+    return (
+      <div className="rounded-2xl border border-accent/20 bg-accent/[0.04] p-10 text-center">
+        <div className="text-4xl mb-4">✓</div>
+        <p className="font-display font-bold text-lg text-text mb-2">전송 완료!</p>
+        <p className="text-text-dim text-sm">빠른 시일 내에 답변드리겠습니다.</p>
+        <button onClick={() => setStatus("idle")} className="mt-6 text-accent text-sm font-medium hover:underline">
+          다시 보내기
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-5">
+      <input type="text" name="_honey" className="hidden" />
+      <input type="hidden" name="_subject" value="TORO 랜딩페이지 문의" />
+
+      <div className="grid sm:grid-cols-2 gap-5">
+        <div>
+          <label htmlFor="name" className="block text-xs text-text-muted mb-2 font-medium">이름</label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            required
+            autoComplete="name"
+            placeholder="홍길동"
+            className="w-full px-4 py-3 rounded-xl bg-bg-subtle border border-border text-text text-sm placeholder:text-text-muted/50 transition-[border-color] focus:border-accent/40 focus:outline-none"
+          />
+        </div>
+        <div>
+          <label htmlFor="email" className="block text-xs text-text-muted mb-2 font-medium">이메일</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            autoComplete="email"
+            spellCheck={false}
+            placeholder="you@example.com"
+            className="w-full px-4 py-3 rounded-xl bg-bg-subtle border border-border text-text text-sm placeholder:text-text-muted/50 transition-[border-color] focus:border-accent/40 focus:outline-none"
+          />
+        </div>
+      </div>
+
+      <div>
+        <label htmlFor="subject" className="block text-xs text-text-muted mb-2 font-medium">제목</label>
+        <input
+          id="subject"
+          name="subject"
+          type="text"
+          required
+          placeholder="사용 문의 / 협업 제안 / 기타"
+          className="w-full px-4 py-3 rounded-xl bg-bg-subtle border border-border text-text text-sm placeholder:text-text-muted/50 transition-[border-color] focus:border-accent/40 focus:outline-none"
+        />
+      </div>
+
+      <div>
+        <label htmlFor="message" className="block text-xs text-text-muted mb-2 font-medium">내용</label>
+        <textarea
+          id="message"
+          name="message"
+          required
+          rows={5}
+          placeholder="문의하실 내용을 자유롭게 작성해주세요."
+          className="w-full px-4 py-3 rounded-xl bg-bg-subtle border border-border text-text text-sm placeholder:text-text-muted/50 transition-[border-color] focus:border-accent/40 focus:outline-none resize-none"
+        />
+      </div>
+
+      <button
+        type="submit"
+        disabled={status === "sending"}
+        className="w-full py-3.5 rounded-xl bg-accent text-white font-display font-semibold text-sm transition-[transform,box-shadow,opacity] hover:shadow-[0_0_30px_rgba(129,140,248,0.25)] hover:scale-[1.01] disabled:opacity-50 disabled:cursor-not-allowed"
+      >
+        {status === "sending" ? "전송 중…" : status === "error" ? "다시 시도하기" : "문의 보내기"}
+      </button>
+
+      {status === "error" && (
+        <p className="text-center text-red-400 text-xs">전송에 실패했습니다. 잠시 후 다시 시도해주세요.</p>
+      )}
+    </form>
+  );
+}
+
 /* ═══════════════════════════════════════════
    PAGE
    ═══════════════════════════════════════════ */
@@ -223,9 +336,9 @@ export default function Home() {
             <a href="#features" className="text-sm text-text-muted hover:text-text transition-colors hidden sm:block">기능</a>
             <a href="#commands" className="text-sm text-text-muted hover:text-text transition-colors hidden sm:block">명령어</a>
             <a href="https://bot.yeonnnn.xyz/chat" target="_blank" rel="noopener noreferrer" className="text-sm text-text-muted hover:text-text transition-colors hidden sm:block">체험하기</a>
-            <a href="#cta" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-accent text-white text-sm font-semibold hover:brightness-110 transition-[filter]">
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0l-9.75 6.093L2.25 6.75" /></svg>
-              <span className="hidden sm:inline">문의하기</span>
+            <a href="#cta" className="text-sm text-text-muted hover:text-text transition-colors hidden sm:block">문의</a>
+            <a href="https://bot.yeonnnn.xyz/chat" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-accent text-white text-sm font-semibold hover:brightness-110 transition-[filter]">
+              웹에서 체험
             </a>
           </div>
         </div>
@@ -252,14 +365,13 @@ export default function Home() {
           </p>
 
           <div className="flex flex-wrap justify-center gap-4" style={{ animation: "fade-up 0.8s cubic-bezier(0.16,1,0.3,1) 0.5s both" }}>
-            <a href="mailto:yeonnnn.dev@gmail.com?subject=TORO%20사용%20문의" className="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-accent text-white font-display font-semibold text-sm transition-[transform,box-shadow] hover:shadow-[0_0_30px_rgba(129,140,248,0.25)] hover:scale-[1.03]">
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0l-9.75 6.093L2.25 6.75" /></svg>
-              사용 문의하기
+            <a href="https://bot.yeonnnn.xyz/chat" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-accent text-white font-display font-semibold text-sm transition-[transform,box-shadow] hover:shadow-[0_0_30px_rgba(129,140,248,0.25)] hover:scale-[1.03]">
+              웹에서 체험하기
               <svg className="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
             </a>
-            <a href="https://bot.yeonnnn.xyz/chat" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl border border-border text-text-dim font-display font-medium text-sm transition-[border-color,color] hover:border-white/[0.15] hover:text-text">
-              웹에서 체험하기
-              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" /></svg>
+            <a href="#cta" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl border border-border text-text-dim font-display font-medium text-sm transition-[border-color,color] hover:border-white/[0.15] hover:text-text">
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0l-9.75 6.093L2.25 6.75" /></svg>
+              메일로 문의하기
             </a>
           </div>
         </div>
@@ -322,32 +434,30 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══ CTA ═══ */}
+      {/* ═══ CONTACT ═══ */}
       <section id="cta" className="py-32 sm:py-40 px-6 sm:px-10" ref={s4}>
-        <div className="reveal max-w-2xl mx-auto text-center">
-          <div className="w-20 h-20 rounded-2xl bg-accent flex items-center justify-center text-3xl font-display font-black text-white mx-auto mb-10 shadow-[0_0_60px_rgba(129,140,248,0.15)]">
-            T
-          </div>
-          <h2 className="font-display font-extrabold text-3xl sm:text-5xl tracking-tight mb-6">
-            지금 바로
-            <br />
-            <span className="text-accent-bright">TORO를 만나보세요</span>
-          </h2>
-          <p className="text-text-dim text-lg mb-12 max-w-md mx-auto">
-            사용 문의, 커스텀 캐릭터 요청, 협업 제안 등
-            <br />
-            무엇이든 편하게 연락주세요.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a href="mailto:yeonnnn.dev@gmail.com?subject=TORO%20사용%20문의" className="group inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-accent text-white font-display font-bold text-base transition-[transform,box-shadow] hover:shadow-[0_0_40px_rgba(129,140,248,0.3)] hover:scale-[1.03]">
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0l-9.75 6.093L2.25 6.75" /></svg>
-              이메일 보내기
-              <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
-            </a>
-            <a href="https://bot.yeonnnn.xyz/chat" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border border-border text-text-dim font-display font-medium text-base transition-[border-color,color] hover:border-white/[0.15] hover:text-text">
-              웹에서 체험하기
-              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" /></svg>
-            </a>
+        <div className="max-w-5xl mx-auto">
+          <div className="reveal grid lg:grid-cols-[1fr_1.2fr] gap-16 lg:gap-24 items-start">
+            {/* Left - Info */}
+            <div>
+              <span className="inline-block text-xs font-display font-semibold text-accent tracking-widest uppercase mb-5">Contact</span>
+              <h2 className="font-display font-extrabold text-3xl sm:text-4xl tracking-tight mb-6 leading-[1.15]">
+                TORO에 대해
+                <br />
+                <span className="text-accent-bright">궁금한 점이 있나요?</span>
+              </h2>
+              <p className="text-text-dim text-base leading-relaxed mb-8">
+                사용 문의, 커스텀 캐릭터 요청, 협업 제안 등
+                무엇이든 편하게 보내주세요. 빠르게 답변드리겠습니다.
+              </p>
+              <div className="flex items-center gap-3 text-text-muted text-sm">
+                <svg className="w-4 h-4 text-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0l-9.75 6.093L2.25 6.75" /></svg>
+                yeonnnn.dev@gmail.com
+              </div>
+            </div>
+
+            {/* Right - Form */}
+            <ContactForm />
           </div>
         </div>
       </section>
